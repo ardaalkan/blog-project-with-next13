@@ -1,5 +1,6 @@
 import PaddingContainer from "@/components/layout/padding-container";
 import PostCart from "@/components/post/post-card";
+import PostList from "@/components/post/post-list";
 import { DUMMY_POSTS } from "@/DUMMY_DATA";
 
 export default function Home() {
@@ -7,8 +8,8 @@ export default function Home() {
     <PaddingContainer>
       <main className="h-auto space-y-10">
         <PostCart post={DUMMY_POSTS[0]} />
-        <PostCart layout="vertical" post={DUMMY_POSTS[5]} />
+        <PostList posts={DUMMY_POSTS.filter((_post, index) => index > 0 && index < 3)} layout={"vertical"} />
       </main>
-    </PaddingContainer>
+    </PaddingContainer> 
   );
 }
