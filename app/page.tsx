@@ -7,6 +7,7 @@ export default function Home() {
     <PaddingContainer>
       <main className="h-auto space-y-10">
         <PostCart post={DUMMY_POSTS[0]} />
+        <PostCart layout="vertical" post={DUMMY_POSTS[5]} />
       </main>
     </PaddingContainer>
   );
