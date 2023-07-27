@@ -12,7 +12,7 @@ const PostContent = ({ post, isPostPage = false }: PostContentProps) => {
   return (
     <div className="space-y-2">
       <div
-        className={`text-xs @md:text-sm flex gap-2 items-center text-neutral-400 ${
+        className={`text-xs @md:text-sm flex gap-2 items-center flex-wrap text-neutral-400 ${
           isPostPage ? "text-sm" : "text-xs @md:text-sm"
         }`}
       >

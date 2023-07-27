@@ -25,8 +25,8 @@ const PostCart = ({
       href={`/post/${post.slug}`}
     >
       <Image
-        className={`rounded-md w-full object-cover object-center max-h-[300px] ${
-          reverse ? "md:order-last " : ""
+        className={`rounded-md w-full object-cover object-center h-full max-h-[300px] ${
+          reverse ? "md:order-last" : ""
         }`}
         alt={post.title}
         src={post.image}

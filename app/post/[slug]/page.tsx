@@ -1,8 +1,9 @@
 import { DUMMY_POSTS } from "@/DUMMY_DATA";
+import CtaCart from "@/components/elements/cta-card";
 import SocialLink from "@/components/elements/social-links";
 import PaddingContainer from "@/components/layout/padding-container";
+import PostBody from "@/components/post/post-body";
 import PostHero from "@/components/post/post-hero";
-import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -29,20 +30,24 @@ const Page = ({
 
   return (
     <PaddingContainer>
-      <PostHero post={post} />
-      <div className="mt-10 flex gap-10">
-        <div className="relative">
-          <div className="sticky top-20">
-            <SocialLink
-              isSharedURL
-              platform="facebook"
-              link={`https://www.facebook.com/sharer.php?u=${
-                `${process.env.NEXT_PUBLİC_SITE_URL}` + `/post/${post.slug}`
-              }`}
-            />
+      <div className="space-y-10">
+        <PostHero post={post} />
+        <div className="flex flex-col md:flex-row gap-10">
+          <div className="relative">
+            <div className="sticky flex items-center gap-5 top-20">
+              <div className="font-medium md:hidden">Share this content.</div>
+              <SocialLink
+                isSharedURL
+                platform="facebook"
+                link={`https://www.facebook.com/sharer.php?u=${
+                  `${process.env.NEXT_PUBLİC_SITE_URL}` + `/post/${post.slug}`
+                }`}
+              />
+            </div>
           </div>
+          <PostBody body={post.body} />
         </div>
-        <div className="h-[1000px] bg-slate-200 w-full">Post Body</div>
+        <CtaCart />
       </div>
     </PaddingContainer>
   );
